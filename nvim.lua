@@ -137,7 +137,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 -- ## LANGUAGE SUPPORT ##
 -- ######################
 
--- Rust language server setup using rust-analyzer
+-- Rust LSP
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "rust",
   callback = function()
@@ -145,6 +145,19 @@ vim.api.nvim_create_autocmd("FileType", {
       name = "rust-analyzer",
       cmd = { "rust-analyzer" },
       root_dir = vim.fs.dirname(vim.fs.find({ "Cargo.toml" }, { upward = true })[1]),
+      on_attach = on_attach,
+    })
+  end,
+})
+
+-- Typescript LSP
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "typescript,typescriptreact",
+  callback = function()
+    vim.lsp.start({
+      name = "tsserver",
+      cmd = { "typescript-language-server", "--stdio" },
+      root_dir = vim.fs.dirname(vim.fs.find({ "tsconfig.json", "package.json" }, { upward = true })[1]),
       on_attach = on_attach,
     })
   end,
