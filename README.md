@@ -1,5 +1,10 @@
+# My Configs
+
+Clone into `~/repos`
+
 ### nvim
 
-```
-curl --create-dirs -o ~/.config/nvim/init.lua https://raw.githubusercontent.com/rsheppard-au/configs/refs/heads/main/nvim.lua
+```sh
+mkdir -p ~/.config/nvim
+ln -s ~/repos/configs/nvim.lua ~/.config/nvim/init.lua
 ```
