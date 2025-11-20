@@ -85,6 +85,13 @@ Keybind("t", "<C-Up>", "<cmd>resize -2<CR>")
 Keybind("t", "<C-Down>", "<cmd>resize +2<CR>")
 Keybind("t", "<C-Left>", "<cmd>vertical resize -2<CR>")
 Keybind("t", "<C-Right>", "<cmd>vertical resize +2<CR>")
+-- Tabs
+Keybind("n", "<leader>tn", ":tabnew<CR>")
+Keybind("n", "<leader>tc", ":tabclose<CR>")
+Keybind("n", "<leader>th", ":tabprevious<CR>")
+Keybind("n", "<leader>tl", ":tabnext<CR>")
+Keybind("n", "<leader>tH", ":tabmove -1<CR>")
+Keybind("n", "<leader>tL", ":tabmove +1<CR>")
 -- Shifting code up/down in visual mode
 Keybind("v", "J", ":m '>+1<CR>gv=gv")
 Keybind("v", "K", ":m '<-2<CR>gv=gv")
